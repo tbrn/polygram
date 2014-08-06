@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="polygram-taglist.html">
+
+<polymer-element name="polygram-photocard" attributes="imageData">
+
+  <template>
+
+    <link rel="stylesheet" href="seed-element.css" />
+    
+    <div style="width: 225px; border: 1px solid #000;">
+      <div style="width: 200px; height: 200px;">
+        <img src="{{imageData.url}}" />
+        <div style="" >
+          <div>{{imageData.username}}</div>
+          <div>{{imageData.description}}</div>
+          <polygram-taglist tags=""></polygram-taglist>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+
+    Polymer('polygram-photocard', {
+      imageData: {
+        url: 'http://placekitten.com/g/200/200',
+        username: '@loser',
+        description: 'This is some photo....'
+      }
+    });
+
+  </script>
+
+</polymer-element>
