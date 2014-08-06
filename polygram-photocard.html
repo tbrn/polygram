@@ -1,5 +1,4 @@
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="polygram-taglist.html">
+<!--<link rel="import" href="../polytemp/polygram-taglist.html">-->
 
 <polymer-element name="polygram-photocard" attributes="imageData">
 
@@ -7,13 +6,12 @@
 
     <link rel="stylesheet" href="seed-element.css" />
     
-    <div style="width: 225px; border: 1px solid #000;">
-      <div style="width: 200px; height: 200px;">
-        <img src="{{imageData.url}}" />
-        <div style="" >
+    <div style="width: 225px; border: 1px solid #000; float:left; margin: 5px;">
+      <div style="text-align: center; display: inline-block">
+        <img src="{{imageData.images.low_resolution.url}}" width="200" />
+        <div style=" display: inline-block" >
           <div>{{imageData.user.username}}</div>
           <div>{{imageData.caption.text}}</div>
-          <polygram-taglist tags=""></polygram-taglist>
         </div>
       </div>
     </div>
@@ -21,17 +19,7 @@
 
   <script>
 
-    Polymer('polygram-photocard', {
-      imageData: {
-        url: 'http://placekitten.com/g/200/200',
-        user: {
-          username: '@loser'
-        },
-        caption: {
-          text: 'This is some photo....'
-        }
-      }
-    });
+    Polymer('polygram-photocard', {});
 
   </script>
 

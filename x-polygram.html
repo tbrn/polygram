@@ -1,0 +1,20 @@
+<link rel="import" href="bower_components/core-toolbar/core-toolbar.html" />
+<link rel="import" href="bower_components/paper-input/paper-input.html" />
+<link rel="import" href="instagram-api.html" />
+<link rel="import" href="polygram-photocard.html" />
+<polymer-element name="x-polygram" attributes="query result accessToken">
+  <template>
+    <instagram-api query="{{query}}" result="{{ data }}"></instagram-api>
+    <core-toolbar>
+      Polygram!
+      <paper-input label="Search..." inputValue="{{query}}"></paper-input>
+    </core-toolbar>
+    <template repeat="{{item in data}}">
+      <!--<img src=" {{ item.images.low_resolution.url }}" />-->
+      <polygram-photocard imageData="{{item}}"></polygram-photocard>
+    </template>
+  </template>
+  <script>
+    Polymer('x-polygram', {});
+  </script>
+</polymer-element>

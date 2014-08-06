@@ -1,0 +1,25 @@
+<polymer-element name="instagram-api" attributes="query result accessToken">
+  <template></template>
+  <script src="bower_components/sprintf/dist/sprintf.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script>
+    Polymer('instagram-api', {
+      runQuery: function(){
+        var that = this;
+        var vars = {
+          s: 'https://api.instagram.com',
+          accessToken: that.accessToken || '1452108920.1fb234f.09d16211772d428f955969036cd90110',
+          tag: that.query
+        }
+
+        $.getJSON('https://api.instagram.com/v1/tags/'+ that.query +'/media/recent?access_token=1452108920.1fb234f.09d16211772d428f955969036cd90110&callback=?', function(response){
+            that.result = response.data;
+        });
+      },
+
+      queryChanged: function(){
+        this.runQuery();
+      }
+    });
+  </script>
+</polymer-element>
