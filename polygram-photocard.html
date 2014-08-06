@@ -11,8 +11,8 @@
       <div style="width: 200px; height: 200px;">
         <img src="{{imageData.url}}" />
         <div style="" >
-          <div>{{imageData.username}}</div>
-          <div>{{imageData.description}}</div>
+          <div>{{imageData.user.username}}</div>
+          <div>{{imageData.caption.text}}</div>
           <polygram-taglist tags=""></polygram-taglist>
         </div>
       </div>
@@ -24,8 +24,12 @@
     Polymer('polygram-photocard', {
       imageData: {
         url: 'http://placekitten.com/g/200/200',
-        username: '@loser',
-        description: 'This is some photo....'
+        user: {
+          username: '@loser'
+        },
+        caption: {
+          text: 'This is some photo....'
+        }
       }
     });
 
